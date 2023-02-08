@@ -1,0 +1,42 @@
+Consideraciones previas: 
+*El drone debe estar encendido y el control debe estar encendido y conectado a la pc
+el control se conecta usando el cable usb a usb-c y el adaptador que trae que es de usb-c a micro usb
+
+*Es posible que la aplicacion genere algun error durante la ejecuacion de los pasos
+5, 6, 7, 8, para solucionar eso se debe reiniciar el control del drone y la aplicacion 
+(cerrarla y ejecutarla de nuevo)
+
+
+1.- Acceder a la carpeta que contiene el archivo .sln
+ruta: E:\Documentos\GitHub\Windows-SDK\Sample Code
+
+2.- Doble click en el archivo .sln
+
+3.- Ejecutar el codigo: un click en "Equipo local"
+
+4.- Una vez se ejecuto la aplicacion, se va a la seccion "Activating DJIWindowsSDK" e ingresa
+la clave de activacion: d3e100e4caa8cd87a7e2d0b8
+
+5.- Una vez se confirma la activacion apareceran mas secciones, se va a la seccion 
+"FPV" (solo para comprobar la comunicacion entre el control y la pc), en caso de 
+que tarde mas de un minuto hay que reiniciar el control del drone y la aplicacion
+
+6.- Una vez se confirma la comunicacion entre drone y pc, se va a la seccion 
+"ComponentHandling"
+
+7.- Para confirmar que se pueden leer datos del control correctamente en el apartado 
+"Getting" preciona el boton "GetAircraftName" y en el recuadro de arriba debe salir 
+un nombre similar a: "Diego Chavez-Mavic2"
+
+8.- Para que el programa comience a registrar los datos presiona el boton 
+"Register aircraft velocity events"
+
+9.- Una vez hecho eso, regresa a visual studio y en la consola deben de salir los valores
+cada vez que el dron detecte un cambio en la altura (para comprobar que si funciona
+se puede mover el dron muy rapido para ver la salida en consola)
+los datos que se muestran son:
+	Tiempo desde que presiono registrar datos, Altura relativa de origen, valor vertical del joystick izquierdo
+	dimenciones: m[s], [m], []
+	por si las dudas: milisegundos, metros, adimencional
+
+10.- Para terminar el programa solo cierre la aplicacion, la consola mantendra los datos
